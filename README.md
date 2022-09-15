@@ -6,7 +6,7 @@ The documentation for this metadata specification can be found online in the [RA
 
 The original copy of the metadata specification is maintained in the CEDAR system in [this folder](https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2Fff607885-65ef-4145-8403-f83f0a41bbf8). If you do not have a CEDAR account, you may view [an OpenView copy of the specification](https://openview.metadatacenter.org/templates/https:%2F%2Frepo.metadatacenter.org%2Ftemplates%2Fec918d9b-fcd2-4e6e-b63b-2c67aece9f68). 
 
-You may also view [an example set of metadata using this template](https://openview.metadatacenter.org/template-instances/https:%2F%2Frepo.metadatacenter.org%2Ftemplate-instances%2F10e80027-a196-43a8-bc57-dd909918ae09). (This is using a slightly older version of the template but has almost exactly the same fields; the example will be replaced with an update version soon.)
+You may also view [an example set of metadata using this template](https://cedar.metadatacenter.org/instances/edit/https:/repo.metadatacenter.org/template-instances/1cbab19a-1565-41ea-b42c-f1b898228dee). (This is using a slightly older version of the template but has almost exactly the same fields; the example will be replaced with an update version soon.)
 
 The original specification work was performed using Google sheets. You can see it in [this tab in Google sheets](https://docs.google.com/spreadsheets/d/1Kwe4PFodciXo-XDX2bHN8F-CRAmopguoI9YKFX6piaQ/edit#gid=1821065062). Look on the first tab of that workbook for additional context.
 
