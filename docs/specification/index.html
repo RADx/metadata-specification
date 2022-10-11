@@ -63,7 +63,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#data-file-identifier">Data File Identifier</a>
+    <li class="toctree-l2"><a class="reference internal" href="#data-file-identity">Data File Identity</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#identifier">Identifier</a>
     </li>
@@ -445,8 +445,8 @@
 <p><a href="#data-file-parent-study">Data File Parent Study</a>  &gt;&gt;  <a href="#phs-identifier">PHS Identifier</a></p>
 <h2 plain>Recommended fields</h2>
 <p>The following fields are recommended fields.  These fields SHOULD be filled out in a metadata instance to greatly increase the likelihood of the associated data file being found by interested parties and to provide proper accreditation for the creators of the file.</p>
-<p><a href="#data-file-identifier">Data File Identifier</a>  &gt;&gt;  <a href="#identifier">Identifier</a></p>
-<p><a href="#data-file-identifier">Data File Identifier</a>  &gt;&gt;  <a href="#file-name-">File Name </a></p>
+<p><a href="#data-file-identity">Data File Identity</a>  &gt;&gt;  <a href="#identifier">Identifier</a></p>
+<p><a href="#data-file-identity">Data File Identity</a>  &gt;&gt;  <a href="#file-name-">File Name </a></p>
 <p><a href="#data-file-content">Data File Content</a>  &gt;&gt;  <a href="#type-of-content">Type Of Content</a></p>
 <p><a href="#data-file-version">Data File Version</a>  &gt;&gt;  <a href="#version">Version</a></p>
 <p><a href="#data-file-subjects">Data File Subjects</a>  &gt;&gt;  <a href="#subject-identifier">Subject Identifier</a></p>
@@ -485,7 +485,7 @@ COVID-19 Booster Shot Side Effects Survey Responses
 en
 </div>
 
-<h2 id="data-file-identifier">Data File Identifier</h2>
+<h2 id="data-file-identity">Data File Identity</h2>
 <p>Information about the globally unique and persistent identifier used to identify and optionally access (meta)data of the data file being described.</p>
 <h3 id="identifier">Identifier</h3>
 <p><span class="badge badge--recommended">Recommended</span></p>
@@ -899,8 +899,10 @@ Submitted
 
 <h3 id="date">Date</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>The date that is specific to the associated event.  </p>
-<p>Note that dates must be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> format.  This format specifies date/times in a locale neutral way with temporal components ordered largest to smallest, for example year-month-day.</p>
+<p>The date/time that is specific to the associated event.  </p>
+<p>Note that dates must be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> format.  This format specifies date/times in a locale neutral way with temporal components ordered largest to smallest, for example year, month, day.  Note that times are in 24 hour clock (military time) format, thus 13:43 is 1:43pm.  When times are specified a timezone must also be specified.</p>
+<p>The date time 2022-11-23T01:23:45.678+09:00 specifies November 23, 2022 at just past 1:23am Pacific Time.</p>
+<p>The date 2022-09-23 specifies September 23, 2022 (without a time stamp).</p>
 <div class="example">
 <div class="example-heading">Example</div>
 2022-11-23T01:23:45.678+09:00
@@ -938,12 +940,22 @@ phs002691
 <p><span class="badge badge--derived">Derived</span>
 <span class="badge badge--optional">Optional</span></p>
 <p>The value of this field is automatically determined from the <em>PHS Identifier</em> field.  This field should not be manually specified or edited.</p>
-<p>The official start date for the study for which this data file was created.</p>
+<p>The official start date for the study for which this data file was created.  This date must be in the ISO-8601 format of yyyy-mm-dd.  For example, 2022-10-05 specified October 5, 2022.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+2021-10-05
+</div>
+
 <h3 id="study-end-date">Study End Date</h3>
 <p><span class="badge badge--derived">Derived</span>
 <span class="badge badge--optional">Optional</span></p>
 <p>The value of this field is automatically determined from the <em>PHS Identifier</em> field.  This field should not be manually specified or edited.</p>
-<p>The official end date for the study for which this data file was created.</p>
+<p>The official end date for the study for which this data file was created.   This date must be in the ISO-8601 format of yyyy-mm-dd.  For example, 2022-10-05 specified October 5, 2022.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+2021-10-05
+</div>
+
 <h2 id="data-file-funding-source">Data File Funding Source</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
 <p>The sources of funding that enabled and drove the creation of the data file. (Non-monetary sources are described under Contributor.)</p>
@@ -959,12 +971,135 @@ phs002691
 <h3 id="funder-name">Funder Name</h3>
 <p><span class="badge badge--recommended">Recommended</span></p>
 <p>Name of the organization providing the funding for the described data file ('funding provider').</p>
+<p>This is typically the NIH Institute that awarded the grant.</p>
 <h3 id="funder-identifier">Funder Identifier</h3>
 <p><span class="badge badge--recommended">Recommended</span></p>
-<p>Globally unique string that identifies the funding provider.</p>
+<p>Globally unique string that identifies the funding provider.  A list of NIH Institute identifiers may be found <a href="https://ror.org/01cwqze88">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>NIH Institute</th>
+<th>Identifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Center for Information Technology</td>
+<td><a href="https://ror.org/03jh5a977">https://ror.org/03jh5a977</a></td>
+</tr>
+<tr>
+<td>Center for Scientific Review</td>
+<td><a href="https://ror.org/04r5s4b52">https://ror.org/04r5s4b52</a></td>
+</tr>
+<tr>
+<td>Eunice Kennedy Shriver National Institute of Child Health and Human Development</td>
+<td><a href="https://ror.org/04byxyr05">https://ror.org/04byxyr05</a></td>
+</tr>
+<tr>
+<td>Fogarty International Center</td>
+<td><a href="https://ror.org/02xey9a22">https://ror.org/02xey9a22</a></td>
+</tr>
+<tr>
+<td>National Cancer Institute</td>
+<td><a href="https://ror.org/040gcmg81">https://ror.org/040gcmg81</a></td>
+</tr>
+<tr>
+<td>National Center for Advancing Translational Sciences</td>
+<td><a href="https://ror.org/04pw6fb54">https://ror.org/04pw6fb54</a></td>
+</tr>
+<tr>
+<td>National Center for Complementary and Integrative Health</td>
+<td><a href="https://ror.org/00190t495">https://ror.org/00190t495</a></td>
+</tr>
+<tr>
+<td>National Eye Institute</td>
+<td><a href="https://ror.org/03wkg3b53">https://ror.org/03wkg3b53</a></td>
+</tr>
+<tr>
+<td>National Heart Lung and Blood Institute</td>
+<td><a href="https://ror.org/012pb6c26">https://ror.org/012pb6c26</a></td>
+</tr>
+<tr>
+<td>National Human Genome Research Institute</td>
+<td><a href="https://ror.org/00baak391">https://ror.org/00baak391</a></td>
+</tr>
+<tr>
+<td>National Institute of Allergy and Infectious Diseases</td>
+<td><a href="https://ror.org/043z4tv69">https://ror.org/043z4tv69</a></td>
+</tr>
+<tr>
+<td>National Institute of Arthritis and Musculoskeletal and Skin Diseases</td>
+<td><a href="https://ror.org/006zn3t30">https://ror.org/006zn3t30</a></td>
+</tr>
+<tr>
+<td>National Institute of Biomedical Imaging and Bioengineering</td>
+<td><a href="https://ror.org/00372qc85">https://ror.org/00372qc85</a></td>
+</tr>
+<tr>
+<td>National Institute of Dental and Craniofacial Research</td>
+<td><a href="https://ror.org/004a2wv92">https://ror.org/004a2wv92</a></td>
+</tr>
+<tr>
+<td>National Institute of Diabetes and Digestive and Kidney Diseases</td>
+<td><a href="https://ror.org/00adh9b73">https://ror.org/00adh9b73</a></td>
+</tr>
+<tr>
+<td>National Institute of Environmental Health Sciences</td>
+<td><a href="https://ror.org/00j4k1h63">https://ror.org/00j4k1h63</a></td>
+</tr>
+<tr>
+<td>National Institute of General Medical Sciences</td>
+<td><a href="https://ror.org/04q48ey07">https://ror.org/04q48ey07</a></td>
+</tr>
+<tr>
+<td>National Institute of Mental Health</td>
+<td><a href="https://ror.org/04xeg9z08">https://ror.org/04xeg9z08</a></td>
+</tr>
+<tr>
+<td>National Institute of Neurological Disorders and Stroke</td>
+<td><a href="https://ror.org/01s5ya894">https://ror.org/01s5ya894</a></td>
+</tr>
+<tr>
+<td>National Institute of Nursing Research</td>
+<td><a href="https://ror.org/01y3zfr79">https://ror.org/01y3zfr79</a></td>
+</tr>
+<tr>
+<td>National Institute on Aging</td>
+<td><a href="https://ror.org/049v75w11">https://ror.org/049v75w11</a></td>
+</tr>
+<tr>
+<td>National Institute on Alcohol Abuse and Alcoholism</td>
+<td><a href="https://ror.org/02jzrsm59">https://ror.org/02jzrsm59</a></td>
+</tr>
+<tr>
+<td>National Institute on Deafness and Other Communication Disorders</td>
+<td><a href="https://ror.org/04mhx6838">https://ror.org/04mhx6838</a></td>
+</tr>
+<tr>
+<td>National Institute on Drug Abuse</td>
+<td><a href="https://ror.org/00fq5cm18">https://ror.org/00fq5cm18</a></td>
+</tr>
+<tr>
+<td>National Institute on Minority Health and Health Disparities</td>
+<td><a href="https://ror.org/0493hgw16">https://ror.org/0493hgw16</a></td>
+</tr>
+<tr>
+<td>National Institutes of Health Clinical Center</td>
+<td><a href="https://ror.org/04vfsmv21">https://ror.org/04vfsmv21</a></td>
+</tr>
+<tr>
+<td>Office of the Director</td>
+<td><a href="https://ror.org/00fj8a872">https://ror.org/00fj8a872</a></td>
+</tr>
+<tr>
+<td>United States National Library of Medicine</td>
+<td><a href="https://ror.org/0060t0j89">https://ror.org/0060t0j89</a></td>
+</tr>
+</tbody>
+</table>
 <h3 id="funder-identifier-scheme">Funder Identifier Scheme</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Name of the scheme or authority for the Funder Identifier.</p>
+<p>Name of the scheme or authority for the Funder Identifier.  This field is optional as in most cases it will be determined from the <em>Funder Identifier</em> field.</p>
 <p><a href="https://www.grid.ac/">GRID</a>  |  <a href="https://isni.org/">ISNI</a>  |  <a href="https://www.linkedin.com/">LinkedIn ID</a>  |  <a href="https://orcid.org/">ORCiD</a>  |  <a href="http://www.researcherid.com/">ResearcherID</a>  |  <a href="https://ror.org/">ROR</a>  |  <a href="https://www.scopus.com/">Scopus</a></p>
 <h3 id="funder-identifier-scheme-iri">Funder Identifier Scheme IRI</h3>
 <p><span class="badge badge--derived">Derived</span>
@@ -1133,7 +1268,9 @@ phs002691
 <p>A geographical bounding box that specifies the geographical coverage of the data contained within the data file associated with this metadata.</p>
 <h3 id="maximum-latitude">Maximum Latitude</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Location of the maximum, or northernmost, data point in this data file, expressed in decimal degrees (southern latitudes are negative)</p>
+<p>Location of the maximum, or northernmost, data point in this data file, expressed in decimal degrees (southern latitudes are negative).</p>
+<p>37.5 specifies 37.5 degress North (37 degrees and 30 minutes North)</p>
+<p>-5.5  specifies 5.5 degress South (5 degress and 30 minutes South)</p>
 <div class="example">
 <div class="example-heading">Example</div>
 -121.208178
@@ -1141,7 +1278,9 @@ phs002691
 
 <h3 id="minimum-latitude">Minimum Latitude</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Location of the minimum, or southernmost, data point in this data file, expressed in decimal degrees (southern latitudes are negative)</p>
+<p>Location of the minimum, or southernmost, data point in this data file, expressed in decimal degrees (southern latitudes are negative).</p>
+<p>37.5 specifies 37.5 degress North (37 degrees and 30 minutes North)</p>
+<p>-5.5  specifies 5.5 degress South (5 degress and 30 minutes South)</p>
 <div class="example">
 <div class="example-heading">Example</div>
 -122.202653
@@ -1150,6 +1289,8 @@ phs002691
 <h3 id="minimum-longitude">Minimum Longitude</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>Location of the minimum, or westernmost, data point in this data file, expressed in decimal degrees (western longitudes are negative)</p>
+<p>150.0 specifies 150 degrees East</p>
+<p>-122.0 specifies 122 degress West</p>
 <div class="example">
 <div class="example-heading">Example</div>
 36.892976
@@ -1158,6 +1299,8 @@ phs002691
 <h3 id="maximum-longitude">Maximum Longitude</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>Location of the maximum, or easternmost, data point in this data file, expressed in decimal degrees (western longitudes are negative)</p>
+<p>150.0 specifies 150 degrees East</p>
+<p>-122.0 specifies 122 degress West</p>
 <div class="example">
 <div class="example-heading">Example</div>
 37.484637
@@ -1172,25 +1315,36 @@ phs002691
 <h3 id="latitude">Latitude</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>Location of this point in north latitude decimal degrees (southern latitudes are negative)</p>
+<p>37.5 specifies 37.5 degress North (37 degrees and 30 minutes North)</p>
+<p>-5.5  specifies 5.5 degress South (5 degress and 30 minutes South)</p>
 <h3 id="longitude">Longitude</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>Location of this point in east longitude decimal degrees (western longitudes are negative)</p>
+<p>150.0 specifies 150 degrees East</p>
+<p>-122.0 specifies 122 degress West</p>
 <h2 id="data-file-geopolitical-coverage">Data File Geopolitical Coverage</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
 <p>A region specified by the totality of one or more place names</p>
 <h3 id="geopolitical-region">Geopolitical region</h3>
 <p><span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span></p>
-<p>Place name depicting a geopolitical region</p>
+<p>Place name depicting a geopolitical region.  We recommend that you use <a href="http://www.geonames.org/search.html">Geonames</a> to specify an identifier for a place.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+https://www.geonames.org/5128581
+</div>
+
 <h2 id="data-file-elevation-coverage">Data File Elevation Coverage</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
 <p>The elevation  covered by the data file being described.</p>
 <h3 id="vertical-extent-minimum-value">Vertical Extent Minimum Value</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>A minimum vertical extent in metres of the data file collection. In case of depth, this contains the maximum depth of data file collection (it is a negative number of greater absolute magnitude than the Vertical Extent Maximum Value).  Note that the unit is metres.</p>
+<p>A minimum vertical extent in metres of the data file collection. In case of depth, this contains the maximum depth of data file collection (it is a negative number of greater absolute magnitude than the Vertical Extent Maximum Value).  </p>
+<p>Note that the unit is metres.</p>
 <h3 id="vertical-extent-maximum-value">Vertical Extent Maximum Value</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>A maximum vertical extent in metres of data file collection. In case of depth, this contains the minimum depth of data file collection (it is a negative number of lesser absolute magnitude than the Vertical Extent Minimum Value).  Note that the unit is metres.</p>
+<p>A maximum vertical extent in metres of data file collection. In case of depth, this contains the minimum depth of data file collection (it is a negative number of lesser absolute magnitude than the Vertical Extent Minimum Value).  </p>
+<p>Note that the unit is metres.</p>
 <h3 id="vertical-extent-datum">Vertical Extent Datum</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The name of the Datum (reference frame) used for the Vertical Extent values.</p>
