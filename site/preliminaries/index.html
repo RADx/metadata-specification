@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/preliminaries/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Preliminaries - RADx Metadata Specification</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Preliminaries";
+        var mkdocs_page_input_path = "preliminaries.md";
+        var mkdocs_page_url = "/preliminaries/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> RADx Metadata Specification
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Preliminaries</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#terminology">Terminology</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#instances">Instances</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#templates">Templates</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fields">Fields</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#elements">Elements</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#technologies">Technologies</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#json-schema">JSON-Schema</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#json-ld">JSON-LD</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../language-codes/">Language Codes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../specification/">Specification</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../creating-metadata/">Creating Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">RADx Metadata Specification</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Preliminaries</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <style>
+code {
+    max-height: 15em;
+    overflow-y: scroll;
+}
+</style>
+
+<h1 id="preliminaries">Preliminaries</h1>
+<p>The metadata template that is described in these pages is normatively specified using a CEDAR Template.  This page describes the terminology that we use when talking about a template.</p>
+<h2 id="terminology">Terminology</h2>
+<h3 id="instances">Instances</h3>
+<p>A metadata <em>instance</em> is a document that specifies some specific metadata for some specific data.  For example, given a data file, the metadata for the file may describe the file creation date and the name of the person that created the file.</p>
+<p>Metadata instances are represented using JSON documents, or more specifically <a href="https://json-ld.org">JSON-LD (JSON for Linked Data)</a> documents.  A portion of a metadata instances that describes the creation of a file is shown below.  You should not worry about understanding the formatting or meaning of this snippet at this stage.  This metadata specifies that the file was created on October 10, 2022 at 16:44:03 (4:44pm) GMT,  it specifies the identifer for the person who created the file as <a href="https://orcid.org/0000-0002-1825-0097">https://orcid.org/0000-0002-1825-0097</a> and the name of the person who created the file as "Josiah Carberry".  In this case, the identifier for the person is an <a href="https://orcid.org">ORCID</a>.</p>
+<pre><code class="language-json">&quot;Creation Date&quot; {
+    &quot;@value&quot; : &quot;2022-10-10T16:44:03.195Z&quot;
+},
+&quot;Creator Identifier&quot; {
+    &quot;@id&quot; : &quot;https://orcid.org/0000-0002-1825-0097&quot;
+},
+&quot;Creator Name&quot;: {
+    &quot;@value&quot;: &quot;Josiah Carberry&quot;
+}
+</code></pre>
+<h3 id="templates">Templates</h3>
+<p>A metadata <em>template</em> is a schema for metadata instances.  Following on from the example above, a metadata template would specify that the "Creation Date" is a date/time, that the "Creator Identifier" field is a string that represents an Internationalized Resource Identifier (IRI), and that the "Creator Name" field is a string.  </p>
+<p>At their core metadata templates are specified as JSON-Schema.  They do however also contain other details, for example information that can be used to generate user-interfaces for metadata instance collection.  Like metadata instances, templates contain JSON Linked Data (JSON-LD) markup that is used to embed semantic information into the template that precisely specifies the meaning of "Creation Date", "Creator Identifier" and "Creator Name".  This JSON-LD markup is most visible as <code>@context</code> objects that are spread throughout a template.  </p>
+<p>An example of the template description of the "Creator Identifier" field that was used in the metadata instance description is shown below.  As can be seen, the JSON-Schema/JSON-LD representation of metadata templates is quite verbose and considerably more complex and intimidating that the simple representation of metadata instances.  We only provide this example here so you can seen what a fragment of a template looks like.</p>
+<pre><code class="language-json">&quot;Creator Identifier&quot;: {
+    &quot;@type&quot;: &quot;https://schema.metadatacenter.org/core/TemplateField&quot;,
+    &quot;@id&quot;: &quot;https://repo.metadatacenter.org/template-fields/f88856cc-5b85-444a-bbd1-7d56ff71ed34&quot;,
+    &quot;schema:identifier&quot;: &quot;creator_identifier&quot;,
+    &quot;schema:name&quot;: &quot;Creator Identifier&quot;,
+    &quot;schema:description&quot;: &quot;Globally unique string that identifies the creator (an individual or legal entity).&quot;,
+    &quot;pav:derivedFrom&quot;: &quot;&quot;,
+    &quot;skos:prefLabel&quot;: &quot;Creator Identifier&quot;,
+    &quot;skos:altLabel&quot;: [],
+    &quot;pav:version&quot;: &quot;0.9.1&quot;,
+    &quot;bibo:status&quot;: &quot;bibo:draft&quot;,
+    &quot;_valueConstraints&quot;: {
+        &quot;defaultValue&quot;: &quot;&quot;,
+        &quot;requiredValue&quot;: false,
+        &quot;multipleChoice&quot;: false
+    },
+    &quot;_ui&quot;: {
+        &quot;inputType&quot;: &quot;textfield&quot;
+    },
+    &quot;pav:createdOn&quot;: null,
+    &quot;pav:createdBy&quot;: null,
+    &quot;pav:lastUpdatedOn&quot;: null,
+    &quot;oslc:modifiedBy&quot;: null,
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;title&quot;: &quot;Field(Creator Identifier)&quot;,
+    &quot;description&quot;: &quot;Generated by CSV2CEDAR.&quot;,
+    &quot;properties&quot;: {
+        &quot;@type&quot;: {
+            &quot;oneOf&quot;: [
+                {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;format&quot;: &quot;uri&quot;
+                },
+                {
+                    &quot;type&quot;: &quot;array&quot;,
+                    &quot;minItems&quot;: 1,
+                    &quot;items&quot;: {
+                        &quot;type&quot;: &quot;string&quot;,
+                        &quot;format&quot;: &quot;uri&quot;
+                    },
+                    &quot;uniqueItems&quot;: true
+                }
+            ]
+        },
+        &quot;@value&quot;: {
+            &quot;type&quot;: [
+                &quot;string&quot;,
+                &quot;null&quot;
+            ]
+        },
+        &quot;rdfs:label&quot;: {
+            &quot;type&quot;: [
+                &quot;string&quot;,
+                &quot;null&quot;
+            ]
+        }
+    },
+    &quot;additionalProperties&quot;: false,
+    &quot;schema:schemaVersion&quot;: &quot;1.6.0&quot;,
+    &quot;@context&quot;: {
+        &quot;xsd&quot;: &quot;http://www.w3.org/2001/XMLSchema#&quot;,
+        &quot;pav&quot;: &quot;http://purl.org/pav/&quot;,
+        &quot;bibo&quot;: &quot;http://purl.org/ontology/bibo/&quot;,
+        &quot;oslc&quot;: &quot;http://open-services.net/ns/core#&quot;,
+        &quot;schema&quot;: &quot;http://schema.org/&quot;,
+        &quot;skos&quot;: &quot;http://www.w3.org/2004/02/skos/core#&quot;,
+        &quot;schema:name&quot;: {
+            &quot;@type&quot;: &quot;xsd:string&quot;
+        },
+        &quot;schema:description&quot;: {
+            &quot;@type&quot;: &quot;xsd:string&quot;
+        },
+        &quot;skos:prefLabel&quot;: {
+            &quot;@type&quot;: &quot;xsd:string&quot;
+        },
+        &quot;skos:altLabel&quot;: {
+            &quot;@type&quot;: &quot;xsd:string&quot;
+        },
+        &quot;pav:createdOn&quot;: {
+            &quot;@type&quot;: &quot;xsd:dateTime&quot;
+        },
+        &quot;pav:createdBy&quot;: {
+            &quot;@type&quot;: &quot;@id&quot;
+        },
+        &quot;pav:lastUpdatedOn&quot;: {
+            &quot;@type&quot;: &quot;xsd:dateTime&quot;
+        },
+        &quot;oslc:modifiedBy&quot;: {
+            &quot;@type&quot;: &quot;@id&quot;
+        }
+    },
+    &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;
+}
+</code></pre>
+<h3 id="fields">Fields</h3>
+<p>A <em>field</em> is the most basic descriptive unit of a metadata template.  The key aspects of a field are that is has a name (for example "Creator Identifier"), a description (or help text).  Fields are either directly or indirectly embedded into template to form a complate metadata description.</p>
+<h3 id="elements">Elements</h3>
+<p>An <em>element</em> is an ordered collection of fields and other nested elements.  For example, we may have a "Creator" element that comprises the "Creator Identifier", "First Name" and "Last Name" fields.  Like fields, elements have a name and a description, amongst other attributes.  The artifacts contained in an element may have multiplicities assigned to them.  Thus, we can say that a field in an element is required (min 1) and/or single valued (max 1).</p>
+<h2 id="technologies">Technologies</h2>
+<p>Template, fields and elements make heavy use of <a href="https://json-schema.org">JSON-Schema</a> and <a href="https://json-ld.org">JSON for Linking Data (JSON-LD)</a>.  We provide a very brief summary of these technlogies here.  For more detailed information on these technologies please see the linked Web sites.</p>
+<h3 id="json-schema">JSON-Schema</h3>
+<p>Like XML Schema for XML documents, JSON-Schema provides a declarative way of describing JSON documents and a JSON-Schema can be used to validate a JSON document.  </p>
+<h3 id="json-ld">JSON-LD</h3>
+<p>JSON-LD adds Semantic markup to JSON, making the meaning of JSON documents precise and increasing interoperability across the Web.  Indeed, search engines such as Google take advantage of JSON-LD markup to discover the unambiguous meaning of information in JSON documents.  For our purposes, JSON-LD aids us in making metadata <a href="https://www.go-fair.org/fair-principles/">FAIR</a> – <strong>F</strong>indable, <strong>A</strong>ccessible, <strong>I</strong>nteroperable and <strong>R</strong>esuable.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../language-codes/" class="btn btn-neutral float-right" title="Language Codes">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../language-codes/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../myscript.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
