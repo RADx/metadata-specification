@@ -4,9 +4,9 @@ This repository includes the definition file for the RADx Data File Metadata Spe
 
 The documentation for this metadata specification can be found online in the [RADx Metadata Specification Manual](https://radx.github.io/radx-metadata-specification-docs). Users are requested to refer to that document for the latest information on how to use this specification.
 
-The original copy of the metadata specification is maintained in the CEDAR system in [this folder](https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2Fbb251c56-a720-4b39-92ea-55c053f1ad00). If you do not have a CEDAR account, you may view [an OpenView copy of the specification](https://openview.metadatacenter.org/templates/https:%2F%2Frepo.metadatacenter.org%2Ftemplates%2Fec918d9b-fcd2-4e6e-b63b-2c67aece9f68). 
+The original copy of the metadata specification is maintained in the CEDAR system in [this folder](https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2F5ac6dcb6-7a9b-4a75-a945-60ae43750953). If you do not have a CEDAR account, you may view [an OpenView copy of the specification](https://openview.metadatacenter.org/templates/https:%2F%2Frepo.metadatacenter.org%2Ftemplates%2Fc691629c-1183-4425-9a12-26201eab1a10). 
 
-You may also view [an example set of metadata using this template](https://openview.metadatacenter.org/template-instances/https:%2F%2Frepo.metadatacenter.org%2Ftemplate-instances%2F10e80027-a196-43a8-bc57-dd909918ae09). (This is using a slightly older version of the template but has almost exactly the same fields; the example will be replaced with an update version soon.)
+You may also view [an example set of metadata using this template](https://cedar.metadatacenter.org/instances/edit/https://repo.metadatacenter.org/template-instances/7091d051-ec0e-401a-81ab-ade6c74a7138?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2F5ac6dcb6-7a9b-4a75-a945-60ae43750953).
 
 The original specification work was performed using Google sheets. You can see it in [this tab in Google sheets](https://docs.google.com/spreadsheets/d/1Kwe4PFodciXo-XDX2bHN8F-CRAmopguoI9YKFX6piaQ/edit#gid=802588906). Look on the first tab of that workbook for additional context.
 
